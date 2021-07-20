@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Path</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__Tab</target>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage">
+            <property name="objectName" type="String" label="Object" default=''/>
+            <property name="fieldName" label="Field" type="String" description="API Name of field name to get current step value" default='' />
+            <property name="stepValues" label="Step values" type="String" description="Comma delimited list of step values" default=''/>
+            <property name="stepLabels" label="Step Labels" type="String" description="Comma delimited list of labels for each step value" default='' />
+            <property name="celebrateStep" label="Celebrate Step Completion" type="Boolean" description="Show confetti celebration after steps are completed" default="true" />
+            <property name="celebrationType" label="Celebration Type" type="String" description="The type of celebration to play. Valid types are None, Basic, Random, Fireworks" default="basic" />
+            <property name="usePicklistValues" label="Use Field Picklist values" type="Boolean" description="Use the picklist values of the field entered as the step values" default="false" />
+            <property name="showConfettiActions" label="Show Confetti Actions?" type="Boolean" description="" default="false" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

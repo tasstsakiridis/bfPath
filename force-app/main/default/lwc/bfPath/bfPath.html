@@ -1,0 +1,15 @@
+<template>
+    <template if:true={showConfetti}>
+        <canvas class="confettiCanvas" id='canvas' lwc:dom="manual"></canvas>
+    </template>
+    <lightning-progress-indicator current-step={currentStep} type="path" variant="base">
+        <template for:each={steps} for:item="step">
+            <lightning-progress-step key={step.value} label={step.label} value={step.value} onstepblur={handleStepBlur}></lightning-progress-step>
+        </template>
+    </lightning-progress-indicator>
+    <template if:true={showConfettiActions}>
+        <lightning-button label="Basic Confetti" onclick={handleBasicConfetti}></lightning-button>
+        <lightning-button label="Random Confetti" onclick={handleRandomConfetti}></lightning-button>
+        <lightning-button label="Fireworks Confetti" onclick={handleFireworksConfetti}></lightning-button>
+    </template>
+</template>
